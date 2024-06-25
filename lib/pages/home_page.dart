@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fitness_food_app/components/my_app_bar.dart';
+import 'package:flutter_fitness_food_app/components/my_diets_list.dart';
 import 'package:flutter_fitness_food_app/components/my_search_bar.dart';
 import 'package:flutter_fitness_food_app/components/my_categories_list.dart';
 
@@ -16,11 +17,9 @@ class HomePage extends StatelessWidget {
         children: [
           const MySearchBar(),
           const SizedBox(height: 40,),
-          Column(
-            children: [
-              MyCategoriesList(),
-            ],
-          ),
+          MyCategoriesList(),
+          const SizedBox(height: 40,),
+          MyDietsList(),
         ],
       ),
     );
