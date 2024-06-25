@@ -10,10 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
-        child: MyAppBar(),
-      ),
+      appBar: MyAppBar(),
       body: Column(
         children: [
           MySearchBar(),

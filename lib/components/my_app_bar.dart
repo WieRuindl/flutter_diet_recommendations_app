@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MyAppBar extends StatelessWidget {
+class MyAppBar extends StatelessWidget implements PreferredSize {
   const MyAppBar({super.key});
 
   @override
@@ -48,4 +48,11 @@ class MyAppBar extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  @override
+  // TODO: implement child
+  Widget get child => throw UnimplementedError();
 }
