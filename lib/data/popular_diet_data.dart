@@ -1,22 +1,23 @@
-import 'package:flutter_fitness_food_app/models/popular_diet_model.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fitness_food_app/models/diet_model.dart';
 
 class PopularDietsData {
-  List<PopularDietModel> popularDiets = [
-    PopularDietModel(
+  List<DietModel> data = [
+    DietModel(
       name: 'Blueberry Pancake',
       iconPath: 'assets/icons/blueberry-pancake.svg',
       level: 'Medium',
       duration: '30mins',
       calories: '230kCal',
-      boxIsSelected: true,
+      backgroundColor: Colors.pink,
     ),
-    PopularDietModel(
+    DietModel(
       name: 'Salmon Nigiri',
       iconPath: 'assets/icons/salmon-nigiri.svg',
       level: 'Easy',
       duration: '20mins',
       calories: '120kCal',
-      boxIsSelected: false,
+      backgroundColor: Colors.pink,
     ),
   ];
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fitness_food_app/data/popular_diet_data.dart';
-import 'package:flutter_fitness_food_app/models/popular_diet_model.dart';
+import 'package:flutter_fitness_food_app/models/diet_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MyPopularDietsList extends StatelessWidget {
   MyPopularDietsList({super.key});
 
-  final List<PopularDietModel> popularDiets = PopularDietsData().popularDiets;
+  final List<DietModel> data = PopularDietsData().data;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,9 @@ class MyPopularDietsList extends StatelessWidget {
             // scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             padding: const EdgeInsets.only(left: 20, right: 20,),
-            itemCount: popularDiets.length,
+            itemCount: data.length,
             separatorBuilder: (context, index) => const SizedBox(height: 25,),
-            itemBuilder: ( context, index) {
+            itemBuilder: (context, index) {
               return Container(
                 height: 100,
                 decoration: BoxDecoration(
@@ -47,32 +47,24 @@ class MyPopularDietsList extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SvgPicture.asset(
-                      popularDiets[index].iconPath,
-                      width: 65,
-                      height: 65,
-                    ),
+                    SvgPicture.asset(data[index].iconPath, width: 65, height: 65,),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          popularDiets[index].name,
+                          data[index].name,
                           style: const TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
                         ),
                         Text(
-                          '${popularDiets[index].level} | ${popularDiets[index].duration} | ${popularDiets[index].calories}',
+                          '${data[index].level} | ${data[index].duration} | ${data[index].calories}',
                           style: const TextStyle(color: Color(0xff7B6F72), fontSize: 13, fontWeight: FontWeight.w400),
                         ),
                       ],
                     ),
                     GestureDetector(
                       onTap: () { print('TAP'); },
-                      child: SvgPicture.asset(
-                        'assets/icons/button.svg',
-                        width: 30,
-                        height: 30,
-                      ),
+                      child: SvgPicture.asset('assets/icons/button.svg', width: 30, height: 30,),
                     ),
                   ]
                 ),

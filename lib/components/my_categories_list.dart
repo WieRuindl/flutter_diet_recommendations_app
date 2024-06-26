@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class MyCategoriesList extends StatelessWidget {
   MyCategoriesList({super.key});
 
-  final List<CategoryModel> categories = CategoriesData().categories;
+  final List<CategoryModel> data = CategoriesData().data;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class MyCategoriesList extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20, right: 20,),
-            itemCount: categories.length,
+            itemCount: data.length,
             separatorBuilder: (context, index) => const SizedBox(width: 15,),
             itemBuilder: (context, index) {
               return Container(
                 width: 100,
                 decoration: BoxDecoration(
-                  color: categories[index].backgroundColor.withOpacity(0.3),
+                  color: data[index].backgroundColor.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
@@ -42,16 +42,16 @@ class MyCategoriesList extends StatelessWidget {
                       width: 50,
                       height: 50,
                       decoration: const BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle
+                        color: Colors.white,
+                        shape: BoxShape.circle
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: SvgPicture.asset(categories[index].iconPath),
+                        child: SvgPicture.asset(data[index].iconPath),
                       ),
                     ),
                     Text(
-                      categories[index].name,
+                      data[index].name,
                       style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,),
                     ),
                   ],
